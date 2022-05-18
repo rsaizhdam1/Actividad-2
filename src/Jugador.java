@@ -13,12 +13,11 @@ class Jugador {
     public String opcionAlAzar() {
         String opcion = "";
         int c = (int) (Math.random() * 3);
-        switch (c) {
-            case 0 -> opcion = ("piedra");
-            case 1 -> opcion = ("papel");
-            case 2 -> opcion = ("tijeras");
-        }
-        return opcion;
+        return switch (c) {
+            case 0 -> "piedra";
+            case 1 -> "papel";
+            default -> "tijera";
+        };
     }
 
     public void setExitos() {

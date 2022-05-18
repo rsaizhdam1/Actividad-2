@@ -21,7 +21,6 @@ public class Juego {
 
     public void jugar() {
 
-        // Bucle de juego
         String opcionJugador1 = p1.opcionAlAzar();
         System.out.println("Jugador 1: " + opcionJugador1+"\t Jugador 1 - Partidas ganadas: " + p1.getExitos());
         String opcionJugador2 = p2.opcionAlAzar();

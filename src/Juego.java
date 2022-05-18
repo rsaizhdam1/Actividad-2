@@ -5,72 +5,63 @@ package ende;
  */
 
 
-public class Juego 
-{
-    public static void main(String args[])
-    {
-        Jugador p1=new Jugador();
-        Jugador p2=new Jugador();
-        boolean finJuego=false;  
-        int rondasJugadas = 0;    // Número de rondas jugadas
-        int exitosJugador1=p1.éxitos;
-        int exitosJugador2=p2.éxitos;
-        int empates = 0;
-        String opcionJugador1, opcionJugador2;
-        
+public class Juego {
+    Jugador p1;
+    Jugador p2;
+    int empates;
+    public Juego(Jugador p1, Jugador p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+        this.empates = 0;
+    }
+
+    public int getEmpates() {
+        return empates;
+    }
+
+    public void jugar() {
+
         // Bucle de juego
-        do
-        {
-            System.out.println("***** Ronda: " + rondasJugadas+" *********************\n");
-            System.out.println("Numero de empates: "+ empates + "\n");
-            opcionJugador1=p1.opcion_al_azar();
-            System.out.println("Jugador 1: " + opcionJugador1+"\t Jugador 1 - Partidas ganadas: " + exitosJugador1);
-            opcionJugador2 = p2.opcion_al_azar();
-            System.out.println("Jugador 2: " + opcionJugador2+"\t Jugador 2 - Partidas ganadas: " + exitosJugador2);
-            
+        String opcionJugador1 = p1.opcion_al_azar();
+        System.out.println("Jugador 1: " + opcionJugador1+"\t Jugador 1 - Partidas ganadas: " + p1.getÉxitos());
+        String opcionJugador2 = p2.opcion_al_azar();
+        System.out.println("Jugador 2: " + opcionJugador2+"\t Jugador 2 - Partidas ganadas: " + p2.getÉxitos());
             if((opcionJugador1.equals("piedra"))&&(opcionJugador2.equals("papel")))
             {
                 System.out.println("Jugador 2 GANA");
-                exitosJugador2 = ++p2.éxitos;
+                p2.setÉxitos();
                 
             }
             else if((opcionJugador1.equals("papel"))&&(opcionJugador2.equals("piedra")))
             {
-            	exitosJugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
+                p1.setÉxitos();
             }
             else if((opcionJugador1.equals("piedra"))&&(opcionJugador2.equals("tijeras")))
             {
-            	exitosJugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
+                p1.setÉxitos();
             }
             else if((opcionJugador1.equals("tijeras"))&&(opcionJugador2.equals("piedra")))
             {
-            	exitosJugador2 = ++p2.éxitos;
                 System.out.println("Jugador 2 GANA");
+                p2.setÉxitos();
             }
             else if((opcionJugador1.equals("tijeras"))&&(opcionJugador2.equals("papel")))
             {
-            	exitosJugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
+                p1.setÉxitos();
             }
             else if((opcionJugador1.equals("papel"))&&(opcionJugador2.equals("tijeras")))
             {
-            	exitosJugador2 = ++p2.éxitos;
                 System.out.println("Jugador 2 GANA");
+                p2.setÉxitos();
             }
             if(opcionJugador1==opcionJugador2)
             {
             	empates++;
                 System.out.println("\n\t\t\t Empate \n");
             }
-            rondasJugadas++;
-            if((p1.éxitos>=3)||(p2.éxitos>=3))
-            {
-            	finJuego=true;
-                System.out.println("FIN DEL JUEGO!!");
-            }
-            System.out.println();
-        } while(finJuego!=true);
+
     }
 }

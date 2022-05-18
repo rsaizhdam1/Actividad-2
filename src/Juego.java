@@ -52,7 +52,7 @@ public class Juego {
                 }
             }
 
-            if(opcionJugador1==opcionJugador2) {
+            if(opcionJugador1.equals(opcionJugador2)) {
             	empates++;
                 System.out.println("\n\t\t\t Empate \n");
             }

@@ -9,6 +9,7 @@ class Jugador {
      * Escoge piedra, papel o tijera al azar
      */
     private int exitos;      // número de partidas ganadas
+
     public String opcionAlAzar() {
         int c = (int) (Math.random() * 3);
         return switch (c) {

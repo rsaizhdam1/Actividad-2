@@ -22,10 +22,10 @@ public class Juego {
     public void jugar() {
 
         // Bucle de juego
-        String opcionJugador1 = p1.opcion_al_azar();
-        System.out.println("Jugador 1: " + opcionJugador1+"\t Jugador 1 - Partidas ganadas: " + p1.getÉxitos());
-        String opcionJugador2 = p2.opcion_al_azar();
-        System.out.println("Jugador 2: " + opcionJugador2+"\t Jugador 2 - Partidas ganadas: " + p2.getÉxitos());
+        String opcionJugador1 = p1.opcionAlAzar();
+        System.out.println("Jugador 1: " + opcionJugador1+"\t Jugador 1 - Partidas ganadas: " + p1.getExitos());
+        String opcionJugador2 = p2.opcionAlAzar();
+        System.out.println("Jugador 2: " + opcionJugador2+"\t Jugador 2 - Partidas ganadas: " + p2.getExitos());
             if((opcionJugador1.equals("piedra"))&&(opcionJugador2.equals("papel")))
             {
                 System.out.println("Jugador 2 GANA");

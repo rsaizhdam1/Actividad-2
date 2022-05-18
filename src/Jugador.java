@@ -8,9 +8,9 @@ class Jugador {
     /**
      * Escoge piedra, papel o tijera al azar
      */
-    private int éxitos;      // número de partidas ganadas
+    private int exitos;      // número de partidas ganadas
     private int winTotal;
-    public String opcion_al_azar() {
+    public String opcionAlAzar() {
         String opcion = "";
         Integer c = (int) (Math.random() * 3);
         switch (c) {
@@ -26,12 +26,12 @@ class Jugador {
         return opcion;
     }
 
-    public void setÉxitos() {
-        éxitos++;
+    public void setExitos() {
+        exitos++;
     }
 
-    public int getÉxitos() {
-        return (éxitos);
+    public int getExitos() {
+        return (exitos);
     }
 
 
